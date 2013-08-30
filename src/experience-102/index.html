@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Custom Elements - Experience n°102</title>
+    <meta name="description" content="Custom Elements - Experience 102">
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    x-foo {
+      border: 1px solid red;
+      width: 40px;
+      height: 40px;
+      background-color: #f06;
+      display: block;
+    }
+    </style>
+</head>
+<body>
+  <script>
+  var XFoo = document.register('x-foo', {
+    prototype: Object.create(HTMLElement.prototype)
+  });
+
+  var xFoo = new XFoo();
+  xFoo.addEventListener('click', function(e) {
+    alert('Thanks!');
+  });
+  document.body.appendChild(xFoo);
+  </script>
+</body>
+</html>
